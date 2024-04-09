@@ -2,7 +2,7 @@ export const USERS = {
     JOE_DOU: {
         "name": "James",
         "lastName": "Adams",
-        "email": "aqa-james20199@test.com",
+        "email": "aqa-j2987d9@test.com",
         "password": "Qwerty12346",
         "repeatPassword": "Qwerty12346"
     },

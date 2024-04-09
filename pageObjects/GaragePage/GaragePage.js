@@ -2,19 +2,14 @@ import BasePage from "../BasePage";
 
 
 export class GaragePage extends BasePage{
+    _pageHeader = "//h1[text()='Garage']"
     constructor(page) {
         super(page, "/panel/garage")
+        this.header = this._page.locator(this._pageHeader)
     }
 
-    async navigateToSettings() {
-        const settingsLink = await this.find("//a[@routerlink='settings']");
-        await settingsLink.click();
+    async getHeaderText(){
+        return await this.getElementText(this._pageHeader);
     }
 
-    async removeAccount() {
-        const removeAccountButton = await this.findByRole('button', {name: 'Remove my account'});
-        await removeAccountButton.click();
-        const removeButton = await  this.findByRole('button', {name: 'Remove'});
-        await removeButton.click();
-    }
 }

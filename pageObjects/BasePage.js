@@ -14,4 +14,14 @@ export default class BasePage {
     async findByRole(role, options){
         return await this._page.getByRole(role, options)
     }
+
+    async navigateToSettings(){
+        await this._page.goto(this._url)
+    }
+
+    async getElementText(locator){
+        const element = this._page.locator(locator);
+        return await element.innerText();
+    }
+
 }
