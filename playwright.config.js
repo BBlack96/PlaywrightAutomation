@@ -11,7 +11,8 @@ import { defineConfig, devices } from '@playwright/test';
  * @see https://playwright.dev/docs/test-configuration
  */
 const config = defineConfig({
-  testDir: './tests',
+  //testDir: './tests',
+  testMatch: /tests\/.*\/*.spec.js/,
   /* Run tests in files in parallel */
   fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
