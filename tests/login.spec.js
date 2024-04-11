@@ -4,6 +4,7 @@ import {USERS} from "../pageObjects/data/users";
 import {GaragePage} from "../pageObjects/GaragePage/GaragePage";
 import {SettingsPage} from "../pageObjects/SettingsPage/SettingsPage";
 import {SignInPopup} from "../pageObjects/WelcomePage/components/SignInPopup";
+import config from "../config/config";
 
 test.describe("Positive auth", () => {
     let welcomePage;
@@ -16,7 +17,7 @@ test.describe("Positive auth", () => {
         garagePage = new GaragePage(page);
         settingsPage = new SettingsPage(page);
         popup = new SignInPopup(page);
-        await page.goto("");
+        await page.goto(config.baseUrl);
     })
 
     test.only('Positive: Successful registration', async ({page}) => {
